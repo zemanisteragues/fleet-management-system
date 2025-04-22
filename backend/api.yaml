@@ -1,0 +1,29 @@
+openapi: 1.0.0
+info:
+  title: Code Improve API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 1.0 
+  
+
+servers:
+  - url: http://localhost:5001
+    description:  Local server 
+  
+paths:
+  /api/user/{login}:
+    post:
+      summary: Creates a user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses: 
+        '201':
+          description: Created
